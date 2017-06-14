@@ -1,8 +1,11 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
+from miapi.models import Release
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class ReleaseSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ('url', 'username', 'email')
+        model = Release
+        exclude = ()
+
+
