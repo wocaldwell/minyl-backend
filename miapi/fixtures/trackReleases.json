@@ -1,0 +1,42 @@
+[
+    {
+        "model": "miapi.TrackRelease",
+        "pk": 1,
+        "fields": {
+          "track": 1,
+          "release": 1
+        }
+    },
+    {
+        "model": "miapi.TrackRelease",
+        "pk": 2,
+        "fields": {
+          "track": 2,
+          "release": 1
+        }
+    },
+    {
+        "model": "miapi.TrackRelease",
+        "pk": 3,
+        "fields": {
+          "track": 3,
+          "release": 2
+        }
+    },
+    {
+        "model": "miapi.TrackRelease",
+        "pk": 4,
+        "fields": {
+          "track": 4,
+          "release": 2
+        }
+    },
+    {
+        "model": "miapi.TrackRelease",
+        "pk": 5,
+        "fields": {
+          "track": 5,
+          "release": 2
+        }
+    }
+]
