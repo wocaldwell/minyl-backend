@@ -1,0 +1,30 @@
+[
+  {
+    "model": "miapi.ReleaseType",
+    "pk": 1,
+    "fields": {
+      "name": "LP"
+    }
+  },
+  {
+    "model": "miapi.ReleaseType",
+    "pk": 2,
+    "fields": {
+      "name": "7-inch"
+    }
+  },
+  {
+    "model": "miapi.ReleaseType",
+    "pk": 3,
+    "fields": {
+      "name": "10-inch"
+    }
+  },
+  {
+    "model": "miapi.ReleaseType",
+    "pk": 4,
+    "fields": {
+      "name": "12-inch"
+    }
+  }
+]

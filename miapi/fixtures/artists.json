@@ -1,0 +1,23 @@
+[
+    {
+        "model": "miapi.Artist",
+        "pk": 1,
+        "fields": {
+          "name": "Jamariqui"
+        }
+    },
+    {
+        "model": "miapi.Artist",
+        "pk": 2,
+        "fields": {
+          "name": "Billy Ray Cirus"
+        }
+    },
+    {
+        "model": "miapi.Artist",
+        "pk": 3,
+        "fields": {
+          "name": "The Melvins"
+        }
+    }
+]

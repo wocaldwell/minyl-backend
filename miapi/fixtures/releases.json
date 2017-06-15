@@ -1,0 +1,24 @@
+[
+    {
+       "model": "miapi.Release",
+        "pk": 1,
+        "fields": {
+          "title": "Blah",
+          "release_type": 1,
+          "year": "1980",
+          "catalog_number": "1980-1234A",
+          "image": "pic/location.jpg"
+        }
+    },
+    {
+       "model": "miapi.Release",
+        "pk": 2,
+        "fields": {
+          "title": "Fake",
+          "release_type": 1,
+          "year": "1989",
+          "catalog_number": "1980-1234A",
+          "image": "pic/location.jpg"
+        }
+    }
+]
