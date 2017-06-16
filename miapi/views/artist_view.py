@@ -17,11 +17,14 @@ class AddArtistView(viewsets.ViewSet):
         # Load the JSON string of the request body into a dict
         req_body = json.loads(request.body.decode())
 
-        new_artist = Artist(
+        artist = Artist.objects.get_or_create(
             name=req_body['name'],
             )
 
-        # Commit the release to the database by saving it
-        new_artist.save()
+        # Return the artist id to the client
+        try:
+            data = json.dumps({"artist_id":artist.id})
+        except AttributeError:
+            data = json.dumps({"artist_id":artist[0].id})
+        return HttpResponse(data, content_type='application/json')
 
-        return HttpResponse('artist release added to db!!!!!!!!!!!!!!!!!')
