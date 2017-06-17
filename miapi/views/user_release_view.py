@@ -17,13 +17,16 @@ class AddUserReleaseView(viewsets.ViewSet):
         # Load the JSON string of the request body into a dict
         req_body = json.loads(request.body.decode())
 
-        new_user_release = UserRelease(
+        new_user_release = UserRelease.objects.get_or_create(
             user=request.user,
             release_id=req_body['release_id'],
             own=req_body['own'],
             )
 
-        # Commit the release to the database by saving it
-        new_user_release.save()
+        # Return the release id to the client
+        try:
+            data = json.dumps({"release_id": new_user_release.id})
+        except AttributeError:
+            data = json.dumps({"release_id":new_user_release[0].id})
 
-        return HttpResponse('user release added to db!!!!!!!!!!!!!!!!!')
+        return HttpResponse(data, content_type='application/json')

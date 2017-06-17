@@ -16,22 +16,28 @@ class AddTrackView(viewsets.ViewSet):
 
         # Load the JSON string of the request body into a dict
         req_body = json.loads(request.body.decode())
-        print(req_body)
-        print('------------------------')
 
         tracks = req_body['tracklist']
-        print(len(tracks))
+
+        tracks_ids = []
+
         for track in tracks:
-            print('track is', track)
             added_track = Track.objects.get_or_create(
                     title=track['title'],
                     artist_id=req_body['artist_id']
                 )
-       # # Return the artist id to the client
-       #  try:
-       #      data = json.dumps({"artist_id":artist.id})
-       #  except AttributeError:
-       #      data = json.dumps({"artist_id":artist[0].id})
-       #  return HttpResponse(data, content_type='application/json')
+            try:
+                tracks_ids.append({
+                    'track_id':added_track.id,
+                    'position': track['position']
+                })
+            except AttributeError:
+                tracks_ids.append({
+                    'track_id':added_track[0].id,
+                    'position': track['position']
+                })
 
-        return HttpResponse('track added to db!!!!!!!!!!!!!!!!!')
+       # Return the tracks ids to the client
+            data = json.dumps(tracks_ids)
+        return HttpResponse(data, content_type='application/json')
+

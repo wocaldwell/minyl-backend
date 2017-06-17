@@ -16,7 +16,7 @@ def add_release(request):
     # Load the JSON string of the request body into a dict
     req_body = json.loads(request.body.decode())
 
-    new_release = Release(
+    new_release = Release.objects.get_or_create(
         title=req_body['title'],
         catalog_number=req_body['catalog_number'],
         image=req_body['image'],
@@ -24,14 +24,10 @@ def add_release(request):
         release_type_id=req_body['release_type'],
         )
 
-    # Commit the release to the database by saving it
-    new_release.save()
-
     # Return the new release id to the client
-    data = json.dumps(
-        {
-            "release_id": new_release.id
-        }
-    )
+    try:
+        data = json.dumps({"release_id": new_release.id})
+    except AttributeError:
+        data = json.dumps({"release_id":new_release[0].id})
 
     return HttpResponse(data, content_type='application/json')
