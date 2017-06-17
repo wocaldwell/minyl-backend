@@ -10,7 +10,7 @@ from rest_framework import viewsets
 
 class CollectionView(viewsets.ViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+
     """
     def collection_list(self, request):
 
