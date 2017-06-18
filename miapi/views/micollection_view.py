@@ -28,7 +28,6 @@ class CollectionView(viewsets.ViewSet):
                         if track_release.track_id == track.id:
                             for artist in artists:
                                 if track.artist_id == artist.id:
-                                    print(user_album.title, ' ', artist.name)
                                     release_dict = {
                                         'artist': artist.name,
                                         'title': user_album.title,
@@ -36,7 +35,6 @@ class CollectionView(viewsets.ViewSet):
                                         'release_type': user_album.release_type.name
                                     }
             releases_with_artist.append(release_dict)
-        print(releases_with_artist)
 
         # serialized_data = ReleaseSerializer(user_releases, many=True, context={'request': request})
         # serialized_artists = ArtistSerializer(artists, many=True, context={'request': request})
