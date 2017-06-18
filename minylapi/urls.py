@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from miapi import views
-from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view
+from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view, search_track_view
 
 router = routers.DefaultRouter()
 
@@ -12,7 +12,8 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^login/', login_view.login_user),
     url(r'^register/', register_view.register_user),
-    url(r'^release/', release_view.add_release),
+    url(r'^release/', release_view.ReleaseView.as_view({'post': 'add_release'})),
+    url(r'^searchtrack/', search_track_view.SearchTrackView.as_view({'post': 'get_release_with_track'})),
     url(r'^userrelease/', user_release_view.AddUserReleaseView.as_view({'post': 'add_user_release'})),
     url(r'^trackrelease/', track_release_view.AddTrackReleaseView.as_view({'post': 'add_track_release'})),
     url(r'^track/', track_view.AddTrackView.as_view({'post': 'add_track'})),
