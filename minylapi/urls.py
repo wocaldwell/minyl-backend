@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from miapi import views
-from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view, search_track_view, miwants_view, update_user_release_view, release_details_view
+from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view, search_track_view, miwants_view, update_user_release_view, release_details_view, delete_user_release_view
 
 router = routers.DefaultRouter()
 
@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^miwants/', miwants_view.MiWantsView.as_view({'get': 'wants_list'})),
     url(r'^searchtrack/', search_track_view.SearchTrackView.as_view({'post': 'get_release_with_track'})),
     url(r'^updateuserrelease/', update_user_release_view.UpdateUserReleaseView.as_view({'post': 'update_user_release'})),
+    url(r'^deleteuserrelease/', delete_user_release_view.DeleteUserReleaseView.as_view({'delete': 'delete_user_release'})),
     url(r'^releasedetails/', release_details_view.ReleaseDetailsView.as_view({'post': 'get_release_details'})),
     url(r'^api-token-auth/', obtain_auth_token),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
