@@ -14,7 +14,8 @@ class Release(models.Model):
     )
     year = models.CharField(max_length=4)
     catalog_number = models.CharField(max_length=30)
-    image = models.CharField(max_length=300)
+    label = models.CharField(max_length=128)
+    image = models.CharField(max_length=512)
 
 class UserRelease(models.Model):
     user = models.ForeignKey(

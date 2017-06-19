@@ -29,6 +29,7 @@ class CollectionView(viewsets.ViewSet):
                             for artist in artists:
                                 if track.artist_id == artist.id:
                                     release_dict = {
+                                        'release_id': user_album.id,
                                         'artist': artist.name,
                                         'title': user_album.title,
                                         'year': user_album.year,
