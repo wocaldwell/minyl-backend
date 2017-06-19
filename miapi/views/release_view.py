@@ -22,6 +22,7 @@ class ReleaseView(viewsets.ViewSet):
             image=req_body['image'],
             year=req_body['year'],
             release_type_id=req_body['release_type'],
+            label=req_body['label']
             )
 
         # Return the new release id to the client
