@@ -69,6 +69,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+ALLOWED_HOSTS = ['www.williamocaldwell.com']
+
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     '127.0.0.1:8080',
