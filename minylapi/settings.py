@@ -29,7 +29,7 @@ DISCOGSSECRET=os.environ['DISCOGSSECRET']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.williamocaldwell.com']
 
 
 # Application definition
@@ -69,13 +69,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ALLOWED_HOSTS = ['www.williamocaldwell.com']
-
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     '127.0.0.1:8080',
     'http://www.williamocaldwell.com'
 )
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'minylapi.urls'
 
