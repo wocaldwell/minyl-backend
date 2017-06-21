@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^deleteuserrelease/', delete_user_release_view.DeleteUserReleaseView.as_view({'delete': 'delete_user_release'})),
     url(r'^releasedetails/', release_details_view.ReleaseDetailsView.as_view({'post': 'get_release_details'})),
     url(r'^envkeys/', env_keys_view.EnvKeysView.as_view({'get': 'get_env_keys'})),
+    url(r'^arrivedrycreds/', arrivedry_env_view.ArriveDryEnvView.as_view({'get': 'get_arrivedry_keys'})),
     url(r'^api-token-auth/', obtain_auth_token),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

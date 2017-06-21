@@ -24,6 +24,10 @@ SECRET_KEY = '2*uw0p!i2be&-lvxvf*%05p%%x63dejl10%_ksyj3e$%3_6oc*'
 
 DISCOGSKEY=os.environ['DISCOGSKEY']
 DISCOGSSECRET=os.environ['DISCOGSSECRET']
+FIREBASEURL=os.environ['FIREBASEURL']
+GOOGLEKEY=os.environ['GOOGLEKEY']
+WEATHERKEY=os.environ['WEATHERKEY']
+WEATHERREF=os.environ['WEATHERREF']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
