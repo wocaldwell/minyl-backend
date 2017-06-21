@@ -22,6 +22,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2*uw0p!i2be&-lvxvf*%05p%%x63dejl10%_ksyj3e$%3_6oc*'
 
+DISCOGSKEY=os.environ['DISCOGSKEY']
+DISCOGSSECRET=os.environ['DISCOGSSECRET']
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -67,7 +71,8 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
-    '127.0.0.1:8080'
+    '127.0.0.1:8080',
+    'http://www.williamocaldwell.com'
 )
 
 ROOT_URLCONF = 'minylapi.urls'
