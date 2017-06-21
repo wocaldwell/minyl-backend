@@ -7,7 +7,7 @@ class ArriveDryEnvView(viewsets.ViewSet):
     """
 
     """
-    permission_classes = (AllowAny)
+    permission_classes = (AllowAny,)
 
 
     def get_arrivedry_keys(self, request):
