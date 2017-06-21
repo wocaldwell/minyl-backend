@@ -1,4 +1,3 @@
-import os
 from django.conf import settings
 from django.http import JsonResponse
 from rest_framework import viewsets
@@ -21,6 +20,5 @@ class ArriveDryEnvView(viewsets.ViewSet):
             'googlekey': settings.GOOGLEKEY
         }
 
-        print('the envs', arrivedry_envs['firebasekey'], "-----------------")
 
         return JsonResponse(arrivedry_envs, safe=False)

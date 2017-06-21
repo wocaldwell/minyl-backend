@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from miapi import views
-from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view, search_track_view, miwants_view, update_user_release_view, release_details_view, delete_user_release_view, env_keys_view
+from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view, search_track_view, miwants_view, update_user_release_view, release_details_view, delete_user_release_view, env_keys_view, arrivedry_env_view
 
 router = routers.DefaultRouter()
 

@@ -1,9 +1,7 @@
-import os
 from django.conf import settings
-# from settings import DISCOGSKEY, DISCOGSSECRET
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 from rest_framework import viewsets
-import json
+
 
 class EnvKeysView(viewsets.ViewSet):
     """
@@ -17,6 +15,5 @@ class EnvKeysView(viewsets.ViewSet):
             'secret': settings.DISCOGSSECRET
         }
 
-        print('the envs', discogs_envs['key'], "-----------------")
 
         return JsonResponse(discogs_envs, safe=False)
