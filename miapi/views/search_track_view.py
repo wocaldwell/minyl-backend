@@ -34,7 +34,6 @@ class SearchTrackView(viewsets.ViewSet):
                 if user_album.id == track_release.release_id:
                     for track in tracks:
                         if track_release.track_id == track.id and track.title == searched_title:
-                            print(track.title, '-----------------')
                             for artist in artists:
                                 if track.artist_id == artist.id:
                                     release_with_track = {

@@ -16,7 +16,6 @@ class UpdateUserReleaseView(viewsets.ViewSet):
 
         # Load the JSON string of the request body into a dict
         release_id_request = json.loads(request.body.decode())
-        print(release_id_request, '-----------------')
 
         updated_user_release = UserRelease.objects.filter(user=request.user, release_id=release_id_request['release_id']).update(own=1)
 

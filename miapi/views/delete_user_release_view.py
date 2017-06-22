@@ -16,12 +16,9 @@ class DeleteUserReleaseView(viewsets.ViewSet):
 
         # Load the JSON string of the request body into a dict
         release_id_request = json.loads(request.body.decode())
-        print(release_id_request, '-----------------')
+
 
         user_release = UserRelease.objects.get(user=request.user, release_id=release_id_request['release_id']).delete()
-
-        # # Return the release id to the client
-        # data = json.dumps({"release": updated_user_release})
 
 
         return HttpResponse('relationship absolved')
