@@ -32,7 +32,22 @@ Setting up the database:
 ```
 ./damnit_django.sh 
 ```
-Run project in browser:
+### Special Note
+One of the views in this API is being used to serve environment variables to another app residing on the same VPS. Therefore, there are some superfluous (to this project) ENVs that need to be included in your environment in order for the code to run properly.
+```
+nano ~/.zshrc
+```
+(or `/.bashrc`, or `/.bash_profile`)and add the following lines ot the bottom of the file.
+```
+export FIREBASEURL=""
+export GOOGLEKEY=""
+export WEATHERKEY=""
+export WEATHERREF=""
+```
+then press `control + x` to exit, `y` to confirm the changes and then `return` to write to the file. Now you should be all set to fire up the server.
+
+### Start Server Locally
+Run project in the CLI:
 ```
 python manage.py runserver
 ```
