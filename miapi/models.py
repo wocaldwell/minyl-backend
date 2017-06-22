@@ -3,9 +3,15 @@ from django.contrib.auth.models import User
 
 
 class ReleaseType(models.Model):
+    '''
+    Class to expose the release types to the API.
+    '''
     name = models.CharField(max_length=25)
 
 class Release(models.Model):
+    '''
+    Class to expose the release to the API.
+    '''
     title = models.CharField(max_length=300)
     release_type = models.ForeignKey(
       ReleaseType,
@@ -18,6 +24,9 @@ class Release(models.Model):
     image = models.CharField(max_length=512)
 
 class UserRelease(models.Model):
+    '''
+    Class to expose the user releases to the API.
+    '''
     user = models.ForeignKey(
       User,
       on_delete=models.DO_NOTHING,
@@ -31,9 +40,15 @@ class UserRelease(models.Model):
     own = models.IntegerField()
 
 class Artist(models.Model):
+    '''
+    Class to expose the artist to the API.
+    '''
     name = models.CharField(max_length=64)
 
 class Track(models.Model):
+    '''
+    Class to expose the tracks to the API.
+    '''
     artist = models.ForeignKey(
         Artist,
         on_delete=models.DO_NOTHING,
@@ -42,6 +57,9 @@ class Track(models.Model):
     title = models.CharField(max_length=128)
 
 class TrackRelease(models.Model):
+    '''
+    Class to expose the track releases to the API.
+    '''
     track = models.ForeignKey(
         Track,
         on_delete=models.DO_NOTHING,

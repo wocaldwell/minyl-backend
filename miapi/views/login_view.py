@@ -29,11 +29,9 @@ def login_user(request):
         # If authentication was successful, log the user in
         if authenticated_user is not None:
             login(request=request, user=authenticated_user)
-            print('COOL LOGIN, DUDE')
 
             return HttpResponse(status=200)
 
         else:
             # Bad login details were provided. So we can't log the user in.
-            print("Invalid login details: {}, {}".format(username, password))
             return HttpResponse("Invalid login details supplied.")
