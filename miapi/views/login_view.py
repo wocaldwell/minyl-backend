@@ -1,18 +1,19 @@
-from django.contrib.auth import logout, login, authenticate
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
 from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render
-from django.template import RequestContext
+from django.http import HttpResponse
 import json
 from miapi.models import *
 
 @csrf_exempt
 def login_user(request):
-    '''Handles the creation of a new user for authentication
+    '''
+    Handles the creation of a new user for authentication.
 
-    Method arguments:
-      request -- The full HTTP request object
+    Arguments:
+    request -- The full HTTP request object.
+
+    Returns:
+    An Http response that confirms the status of the supplied credentials.
     '''
 
     # Load the JSON string of the request body into a dict
