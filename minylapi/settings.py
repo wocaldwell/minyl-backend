@@ -31,9 +31,9 @@ WEATHERREF=os.environ['WEATHERREF']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['www.williamocaldwell.com']
+ALLOWED_HOSTS = ['www.williamocaldwell.com', 'localhost', 'api.www.williamocaldwell.com']
 
 
 # Application definition
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
-    # 'api.apps.ApiConfig',
     'miapi',
 ]
 
@@ -76,6 +75,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     '127.0.0.1:8080',
+    'https://www.williamocaldwell.com'
     'http://www.williamocaldwell.com'
 )
 

@@ -6,17 +6,25 @@ from rest_framework import viewsets
 
 
 class AddUserReleaseView(viewsets.ViewSet):
+    '''
+    API endpiont that for adding a new user release.
+    '''
 
     def add_user_release(self, request):
-        '''Handles the creation of a new user release relationship
+        '''
+        Handles the creation of a new user release relationship.
 
-        Method arguments:
-          request -- The full HTTP request object
+        Arguments:
+        request -- The full HTTP request object.
+
+        Returns:
+        An Http response that includes the new user release id.
         '''
 
         # Load the JSON string of the request body into a dict
         req_body = json.loads(request.body.decode())
 
+        # Get or create a release with the request details
         new_user_release = UserRelease.objects.get_or_create(
             user=request.user,
             release_id=req_body['release_id'],
