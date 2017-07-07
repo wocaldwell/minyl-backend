@@ -22,6 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2*uw0p!i2be&-lvxvf*%05p%%x63dejl10%_ksyj3e$%3_6oc*'
 
+# Keys stored as environment variables, accessable by the client
 DISCOGSKEY=os.environ['DISCOGSKEY']
 DISCOGSSECRET=os.environ['DISCOGSSECRET']
 FIREBASEURL=os.environ['FIREBASEURL']

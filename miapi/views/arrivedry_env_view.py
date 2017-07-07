@@ -13,7 +13,7 @@ class ArriveDryEnvView(viewsets.ViewSet, APIView):
     permission_classes = (AllowAny,)
 
 
-    def get_arrivedry_keys():
+    def get_arrivedry_keys(self, request):
         '''
         Get the external API keys for consumption by the ArriveDry application (another application that resides on server).
 

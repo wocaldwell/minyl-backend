@@ -41,7 +41,7 @@ class UserRelease(models.Model):
 
 class Artist(models.Model):
     '''
-    Class to expose the artist to the API.
+    Class to expose artists to the API.
     '''
     name = models.CharField(max_length=64)
 
