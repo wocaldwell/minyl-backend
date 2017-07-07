@@ -2,7 +2,7 @@
 
 Is your vinyl record collection getting the best of you? miNyl is a web app for music lovers that helps you manage your analog collection in this "21st Century Digital World" (you got that reference, right?). Search for songs in your collection and keep track of all those records you gotta have. miNyl, helping you listen to GOOD music.
 
-#### Checkout [miNyl](http://www.williamocaldwell.com/minylclient/)!
+#### Checkout [miNyl](https://www.williamocaldwell.com/minylclient/)!
 
 ## This is the miNyl Django RESTful API
 
