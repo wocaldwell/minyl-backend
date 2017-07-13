@@ -32,7 +32,7 @@ WEATHERREF=os.environ['WEATHERREF']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.williamocaldwell.com', 'localhost', 'api.www.williamocaldwell.com']
 
@@ -150,11 +150,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-# STATIC_URL = '/static/'
-
-STATIC_ROOT = '/home/django/django_project/django_project/static'
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
