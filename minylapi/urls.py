@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from miapi import views
-from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view, search_track_view, miwants_view, update_user_release_view, release_details_view, delete_user_release_view, env_keys_view, arrivedry_env_view
+from miapi.views import register_view, micollection_view, login_view, release_view, user_release_view, artist_view, track_view, track_release_view, search_track_view, miwants_view, update_user_release_view, release_details_view, delete_user_release_view, env_keys_view, arrivedry_env_view, quote_view
 
 router = routers.DefaultRouter()
 
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^deleteuserrelease/', delete_user_release_view.DeleteUserReleaseView.as_view({'delete': 'delete_user_release'})),
     url(r'^releasedetails/', release_details_view.ReleaseDetailsView.as_view({'post': 'get_release_details'})),
     url(r'^envkeys/', env_keys_view.EnvKeysView.as_view({'get': 'get_env_keys'})),
+    url(r'^quotes/', quote_view.QuoteView.as_view({'get': 'get_quotes'})),
     url(r'^arrivedrycreds/', arrivedry_env_view.ArriveDryEnvView.as_view({'get': 'get_arrivedry_keys'})),
     url(r'^api-token-auth/', obtain_auth_token),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))

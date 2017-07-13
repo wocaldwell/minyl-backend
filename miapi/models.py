@@ -71,3 +71,10 @@ class TrackRelease(models.Model):
         related_name='releasetracks'
     )
     position = models.CharField(max_length=8)
+
+class Quote(models.Model):
+    '''
+    Class to expose the rock and roll quotes to the API.
+    '''
+    quote = models.CharField(max_length=1064)
+    author = models.CharField(max_length=1064)
