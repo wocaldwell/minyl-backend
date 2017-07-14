@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import HttpResponse
 from miapi.models import Release
 from rest_framework import viewsets
 import json
